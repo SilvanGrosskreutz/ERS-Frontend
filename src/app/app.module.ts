@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { ReimbursementMenuComponent } from './components/reimbursement-menu/reimbursement-menu.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UserInfoComponent,
-    ReimbursementMenuComponent
+    ReimbursementMenuComponent,
+    NavBarComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
