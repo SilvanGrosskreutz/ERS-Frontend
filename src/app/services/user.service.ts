@@ -21,4 +21,8 @@ export class UserService {
   register(user:User):Observable<unknown>{
     return this.http.post(this.url+"register", user);
   }
+
+  update(user:User):Observable<unknown>{
+    return this.http.put(this.url, user,{withCredentials:true}); 
+  }
 }
