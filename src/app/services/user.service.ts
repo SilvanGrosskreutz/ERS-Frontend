@@ -25,4 +25,8 @@ export class UserService {
   update(user:User):Observable<unknown>{
     return this.http.put(this.url, user,{withCredentials:true}); 
   }
+
+  logout(){
+    this.activeUser = null;
+  }
 }

@@ -1,1 +1,33 @@
-<p>reimbursement-menu works!</p>
+<div *ngIf="activeUser">
+    <div class="container-fluid">
+        <h2>Reimbursement Menu</h2>
+    </div>
+    <div *ngIf="isManager">
+        <h4>Welcome, Manager {{activeUser.username}}.</h4>
+    </div>
+    <div *ngIf="!isManager">
+        <h4>Welcome, Employee {{activeUser.username}}.</h4>
+        <form (keyup.enter)="createReim()">
+            <div class="form-group">
+                <label for="amount">Amount: </label>
+                <input type="number" id="amount" name="amount" [(ngModel)]="amount">
+            </div>
+          </form>
+          <button class="btn btn-primary" (click)="createReim()">Create Reimbursement!</button>
+          <div *ngIf="errorMsg">
+            <span style="color: red;">Creating the Reimbursement failed.</span>
+          </div>
+          <div *ngIf="successMsg">
+            <span style="color: red;">Successful created Reimbursement.</span>
+          </div>
+          <div *ngIf="nonZeroMsg">
+            <span style="color: red;">The Amount has to be higher than 0.</span>
+          </div>
+    </div>
+</div>
+
+<div *ngIf="!activeUser">
+    <div class="container-fluid">
+        <h4>Please login to view this Page.</h4>
+    </div>
+</div>

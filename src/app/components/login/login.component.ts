@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(user).subscribe({
       next:(authUser:User)=>{
         this.userService.activeUser = authUser;
+        this.userService.activeUser.role = authUser.role;
         this.router.navigate(["/reimMenu"]);
       },
       error:()=>{
